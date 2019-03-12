@@ -6,6 +6,8 @@
     <title>Send SMS</title>
     <link rel="stylesheet" href="../css/bulma.min.css">
     <script defer src="../js/font.js"></script>
+    <script defer src="../js/jquery-3.3.1.min.js"></script>
+    <script defer src="../js/app.js"></script>
   </head>
   <body>
   <section class="section">
@@ -16,14 +18,14 @@
             <div class="field">
                 <label class="label">Project (From Name)</label>
                 <div class="control">
-                  <input class="input" type="text" placeholder="e.g Botanical">
+                  <input id="Project" class="input" type="text" placeholder="e.g Botanical">
                 </div>
               </div>
               
               <div class="field">
                     <label class="label">Message</label>
                     <div class="control">
-                      <textarea class="textarea" placeholder="Insert Message"></textarea>
+                      <textarea id="Message" class="textarea" placeholder="Insert Message"></textarea>
                     </div>
              </div>
              <div class="field is-grouped">
