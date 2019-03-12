@@ -2,7 +2,7 @@ var url = (window.location != window.parent.location)
             ? document.referrer
             : document.location.href;
 console.log(url);
-var startposition = (url.search("/h") + 7);
+var startposition = (url.search("/Leads/") + 7);
 console.log(startposition);
 var leadID = url.slice(startposition,);
 console.log(leadID);
