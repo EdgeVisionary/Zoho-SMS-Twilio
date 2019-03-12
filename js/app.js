@@ -6,7 +6,13 @@ var startposition = (url.search("/Leads/") + 7);
 console.log(startposition);
 var leadID = url.slice(startposition,);
 console.log(leadID);
-$("button").click(function(){
+var lastchar = leadID.substr(-1);
+if(lastchar = "/"){
+  leadID = leadID.slice(0,-1);
+  console.log("HAD A BACKSLASH");
+  console.log(leadID)
+}
+$("#submit").click(function(){
   var message = document.getElementById("Message").value;
   var phone = document.getElementById("Project").value;
   $.post("https://hooks.zapier.com/hooks/catch/2654049/n6ox3t",
@@ -17,4 +23,7 @@ $("button").click(function(){
   },
   );
   console.log("SENT");
+});
+$("#cancel").click(function(){
+window.location.href=url;
 });
