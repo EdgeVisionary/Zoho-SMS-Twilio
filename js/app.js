@@ -23,7 +23,9 @@ $("#submit").click(function(){
   },
   );
   console.log("SENT");
+  var div = document.getElementById('Confirmation');
+  div.innerHTML += 'The text message has been sent.';
 });
 $("#cancel").click(function(){
-window.location.href=url;
+location.reload();
 });
