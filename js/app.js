@@ -7,10 +7,14 @@ console.log(startposition);
 var leadID = url.slice(startposition,);
 console.log(leadID);
 var lastchar = leadID.substr(-1);
-if(lastchar = "/"){
+console.log(lastchar)
+if(isNaN(lastchar)){
   leadID = leadID.slice(0,-1);
   console.log("HAD A BACKSLASH");
   console.log(leadID)
+ }
+else{
+ 
 }
 $("#submit").click(function(){
   var message = document.getElementById("Message").value;
