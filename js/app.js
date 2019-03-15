@@ -1,6 +1,18 @@
+Element.prototype.remove = function() {
+  this.parentElement.removeChild(this);
+}
+NodeList.prototype.remove = HTMLCollection.prototype.remove = function() {
+  for(var i = this.length - 1; i >= 0; i--) {
+      if(this[i] && this[i].parentElement) {
+          this[i].parentElement.removeChild(this[i]);
+      }
+  }
+}
+
 var url = (window.location != window.parent.location)
             ? document.referrer
             : document.location.href;
+
 console.log(url);
 var startposition = (url.search("/Leads/") + 7);
 console.log(startposition);
@@ -29,6 +41,7 @@ $("#submit").click(function(){
   console.log("SENT");
   var div = document.getElementById('Confirmation');
   div.innerHTML += 'The text message has been sent.';
+  document.getElementById("submit").remove();
 });
 $("#cancel").click(function(){
 location.reload();
